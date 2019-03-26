@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "frontend-nested-comments",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +12,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srsandy/Nested-Comments/tree/master/frontend"
+  },
+  "keywords": [],
+  "author": "Sandeep Ranjan https://github.com/srsandy",
+  "bugs": {
+    "url": "https://github.com/srsandy/Nested-Comments/issues"
   },
   "eslintConfig": {
     "extends": "react-app"
