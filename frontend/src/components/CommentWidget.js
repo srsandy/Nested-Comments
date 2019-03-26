@@ -17,7 +17,7 @@ class CommentWidget extends Component {
     }
 
     submitComment = () => {
-    	this.props.onComment([this.state]);
+    	this.props.onComment(this.state);
     }
 
     render() {

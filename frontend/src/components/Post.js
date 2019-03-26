@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommentWidget from './CommentWidget';
-
+import CommentsView from './CommentsView';
 
 class Post extends Component {
     constructor(props) {
@@ -35,6 +35,7 @@ class Post extends Component {
        			<h2>Post-1</h2>
        			<button onClick={this.commentWidgetShow}>Comment</button>
        			{ this.state.showComment && <CommentWidget onComment={this.addComments}/> }
+       			<CommentsView comments={this.state.comments}/>
        		</div>
         );
     }
