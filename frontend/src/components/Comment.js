@@ -38,6 +38,7 @@ class Comment extends Component {
 				{this.props.data.comment} 
 				<button onClick={this.replyWidgetShow}>r</button>
 				{this.state.doReply && <ReplyWidget onComment={this.addComments} />}
+				<CommentsView comments={this.state.comments}/>
 			</div>
 		);
 	}
