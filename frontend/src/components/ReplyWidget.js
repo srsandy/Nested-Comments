@@ -4,8 +4,12 @@ class ReplyWidget extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            comment: ''
+            userId: '',
+            comment: '',
+            commentId: '',
+            head: null,
+            next: null,
+            prev: null
         }
     }
 
