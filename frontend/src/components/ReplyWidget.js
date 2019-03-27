@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CommentWidget extends Component {
+class ReplyWidget extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +26,7 @@ class CommentWidget extends Component {
 
     render() {
         return (
-            <div> 
+            <div className="replyWidget"> 
        			<input onChange={this.addComment} type="text" value={this.state.comment}/> 
        			<button onClick={this.submitComment}>post</button>
        		</div>
@@ -34,12 +34,4 @@ class CommentWidget extends Component {
     }
 }
 
-export default CommentWidget;
-
-
-
-
-
-
-
-
+export default ReplyWidget;

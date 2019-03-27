@@ -6,7 +6,7 @@ class Post extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-        	showComment: false, 
+        	doComment: false, 
         	comments: [] 
         };
     }
@@ -14,7 +14,7 @@ class Post extends Component {
     commentWidgetShow = () => {
         this.setState({
             ...this.state,
-            showComment: true
+            doComment: true
         });
     }
 
@@ -34,7 +34,7 @@ class Post extends Component {
             <div>
        			<h2>Post-1</h2>
        			<button onClick={this.commentWidgetShow}>Comment</button>
-       			{ this.state.showComment && <CommentWidget onComment={this.addComments}/> }
+       			{ this.state.doComment && <CommentWidget onComment={this.addComments}/> }
        			<CommentsView comments={this.state.comments}/>
        		</div>
         );
