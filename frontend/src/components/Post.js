@@ -7,7 +7,8 @@ class Post extends Component {
         super(props);
         this.state = { 
         	doComment: false, 
-        	comments: [] 
+        	comments: [],
+        	curr: null
         };
     }
 
@@ -20,9 +21,17 @@ class Post extends Component {
 
     addComments = (comment) => {
     	let tempComments = this.state.comments;
+
+    	//fill 'next' of last comment
+    	const len = tempComments.length
+		if(len !== 0)
+			tempComments[len-1].next = comment.commentId
+
     	tempComments.push(comment);
     	this.setState({
             ...this.state,
+            //curr update 
+            curr: comment.commentId,
             comments: tempComments
         });
 
@@ -34,7 +43,7 @@ class Post extends Component {
             <div>
        			<h2>Post-1</h2>
        			<button onClick={this.commentWidgetShow}>Comment</button>
-       			{ this.state.doComment && <CommentWidget onComment={this.addComments}/> }
+       			{ this.state.doComment && <CommentWidget onComment={this.addComments} currComment={this.state.curr}/> }
        			<CommentsView comments={this.state.comments}/>
        		</div>
         );

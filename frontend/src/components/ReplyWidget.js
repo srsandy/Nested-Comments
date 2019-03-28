@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid1 from 'uuid/v1';
 
 class ReplyWidget extends Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class ReplyWidget extends Component {
             userId: '',
             comment: '',
             commentId: '',
-            head: null,
+            head: this.props.tHead,
             next: null,
             prev: null
         }
@@ -21,10 +22,18 @@ class ReplyWidget extends Component {
     }
 
     submitComment = () => {
-    	this.props.onComment(this.state);
-    	this.setState({
-            ...this.state,
-            comment: ''
+        this.setState((state, props) => {
+            state.commentId = uuid1();
+            state.prev = props.currComment;
+        }, () => {
+            this.props.onComment(this.state);  
+            this.setState({
+                ...this.state,
+                comment: '',
+                commentId: '',
+                next: null,
+                prev: null
+            });  
         });
     }
 
